@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body {
+            margin: 0;
+             
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                margin: 0;
+      height: 100vh;
+      background-image:
+        linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2)),
+        url('bg.gif');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+     
+        }
+
+        .to {
+            background-color: rgb(103, 135, 211);
+            padding: 20px;
+            padding-top:30px ;
+            min-height: 100px;
+            min-width:300px;
+             width: auto;
+             box-shadow: 0px 0px 10px rgb(69, 81, 173);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+            border-radius: 10px;
+        }
+
+        .head {
+            display: flex;
+            gap: 10px;
+        }
+
+        .int {
+            border: none;
+            outline: none;
+            flex: 1;
+            height: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        input::placeholder {
+            text-align: center;
+        }
+
+        .btn {
+            border: none;
+            padding: 8px;
+            width: 60px;
+            border-radius: 4px;
+            background-color: darkblue;
+            color: aliceblue;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+       span{
+        
+
+          position: absolute;
+          vertical-align: middle;
+          top: 10px;
+      
+        }
+
+        .btn:hover {
+            transition: all 0.2s ease-in-out;
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+
+        .list-container {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+       
+           
+  .list-container li::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('unch.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.list-container li.checked
+{
+        text-decoration: line-through;
+        
+}
+ .list-container li.checked::before
+{
+
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('checked.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    vertical-align: middle; 
+
+}.list-container li {
+    position: relative;
+    background-color: rgb(119, 128, 128);
+    padding: 8px 30px 8px 8px; /* space for the delete button on the right */
+    color: white;
+    border-radius: 6px;
+    word-wrap: break-word;
+     cursor:Pointer;     /* allow long words to break */
+    overflow-wrap: break-word; /* modern version of word-wrap */
+    max-width: 100%;           /* prevents overflow from container */
+    display: block;
+}
+.list-container li span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body> 
+    <div class="container">
+     
+        <div class="to">
+<h1><center>To-Do List</center></h1>
+            <div class="head">
+                <input type="text" class="int" placeholder="Add your list">
+                <button class="btn">ADD</button>
+            </div>
+            <ul class="list-container">
+               <!--<li class="checked">HI</li>
+                <li>HIIII <span>✖</span>   </li>!-->
+            </ul>
+        </div>
+    </div>
+    <script src="to.js"></script>
+</body>
+</html>
